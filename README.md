@@ -129,5 +129,5 @@ again run command : sudo -u splunk bash then run command : cd bin then ./splunk 
 ### Step-16
 Use command exit to exit splunk user 
 Then cd bin
-run command : ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/e147bfb9-31fd-402e-b06b-b560b1838eb2)
+run command : ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/e147bfb9-31fd-402e-b06b-b560b1838eb2) <br>
 It will enable splunk servr to start everytime VM reboots or turns on!
