@@ -29,6 +29,10 @@ The purpose of utilizing the active directiry funcitinaly and attack vectors for
 - <a href="https://youtu.be/uXRxoPKX65Q">Lab-3 Video</a>
 
 
-*Ref 1: Network Diagram*
+Ref 1: Network Diagram*
 ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/c5a76b8b-fff4-434a-9b2b-ae921e35ec37)
+
+<b> Setting Up VM's </b
+Configuring NAT settings Go to tools > Hamburger options > Network 
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/b10c7ef6-7b71-4a52-97de-24b19789ae84)
 
