@@ -43,4 +43,16 @@ Configuring NAT settings Go to tools > Hamburger options > Network
 <p><b> Assign created NAT to all VM Resources </b> <span style="color:red;">Make Sure to Assign Created NAT to All VM's</span></b></p>
 ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/1ec1d94a-4bfe-441c-b6fb-4f02448981a0)
 
-
+Login to Splunk VM Linux Ubuntu 20.04 LTS machine Run command : ip a wil show you Ip adr as 912.168.10.4/24 as per our diagram we need to install IP 192.168.10.10.
+So we need to run command by setting up installer.config.yaml file
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/6a34d28b-4675-409a-bdfe-cef0f4915da1)
+Configure File :
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/a2235cfa-76f5-48aa-83d0-5e64f41b558c)
+-After DHCP- NO line hit enter to add new line and hit tab 3 times 
+-After addresses line hit Enter then hot Tab 3 times again
+-After nameservers line hit Enter for new line and then hit TAB 5 times to add DNS 8.8.8.8 (Google DNS)
+- After that nameserver line hit tab 3 times
+- After routes line hot TAB 5 times
+- Enter new line press Enter then hit TAB 6 times
+- CTRL+X then then Y Press Enter key
+If see warnings rewlaetd to vswitch use this link to resolve issue it worked for me ! https://stackoverflow.com/questions/77352932/ovsdb-server-service-from-no-where
