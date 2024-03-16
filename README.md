@@ -74,3 +74,51 @@ Select Linux and Deb file as we are using Debian based Ubunt Distro for linux Do
 Add on Virtual guest Add on to our VM
 ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/57ac0bc5-437d-49dd-ad28-f7cc42a660a0)
 
+### Step -5 
+Add shared folder to access Splunk download file 
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/bd6df385-0ae2-4d60-a902-edced90233e1)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/b501f2b0-d6d4-4b29-8501-dc935bf9296a)
+
+### Step -6
+Run comand sudo reboot to reboot VM
+### Step-7
+Add user to vboxsf command : sudo adduser <Your username for splunk VM> vboxsf
+If see error group vboxsf not exit then we need to install additional guest utility
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/5b939fda-0543-413f-8c44-cf6599611877)
+
+### Step-8 
+sudo reboot
+
+### Step -9
+Run Add user to vboxsf command : sudo adduser <Your username for splunk VM> vboxsf
+This time user will be added to group - Done 
+### Step-10
+Create shared directory command  mkdir share
+### Step-11
+Mount the share directory/folder [Change your created folder name !]
+Command: ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/245f3b71-0900-446c-8897-bf0bb55d1294)
+If successful must see :
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/ccab40f5-afe5-488b-b64c-58e18bc6b400)
+
+If see any error then try exit command reboot then try again !
+### Step -11
+cd to share and must see Splunk downloaded file
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/10454428-578e-4832-80fb-48f3ef0ba28c)
+
+### Step -12 
+Install splunk command : ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/9dc2428b-39eb-406f-bb32-fafd5c1dac54)
+Once see Complete means all good now !
+
+### Step -13
+CD to /opt/splunk 
+la -ls
+see all users are splunk 
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/79efb311-d3ba-4df9-8b2f-48e0cac2f09f)
+
+run command :![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/8da8dc18-5886-465a-88c6-1730fc77fe72)
+### Step-14
+CD to /bin all binaries files will be displayed here ls-la
+
+### Step -15
+Run splunk installer using command : ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/63843088-151c-4a87-9909-fe6a906ac262)
