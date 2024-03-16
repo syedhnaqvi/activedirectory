@@ -121,7 +121,7 @@ run command :![image](https://github.com/syedhnaqvi/activedirectory/assets/39069
 CD to /bin all binaries files will be displayed here ls-la
 
 ### Step -15
-Run splunk installer using command : ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/63843088-151c-4a87-9909-fe6a906ac262)
+Run splunk installer using command : ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/63843088-151c-4a87-9909-fe6a906ac262) <br>
 IF see error like folder not found then reboot splunk VM
 again run command : sudo -u splunk bash then run command : cd bin then ./splunk start read and accept and then select y choose admin name and password 
 ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/84e96856-8ce8-4b54-8bbc-b90f28635992)
