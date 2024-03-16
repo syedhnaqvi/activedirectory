@@ -56,3 +56,21 @@ Configure File :
 - Enter new line press Enter then hit TAB 6 times
 - CTRL+X then then Y Press Enter key
 If see warnings rewlaetd to vswitch use this link to resolve issue it worked for me ! https://stackoverflow.com/questions/77352932/ovsdb-server-service-from-no-where
+Run ip a command if see IP: 192.168.10.10/24 then it means netplan worked and configurations all setup .
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/71f34f0a-2e0d-4e3c-a777-3bdb2eedd311)
+Last check ping www.google.com if you see reply it means all working else revisit your netplan config file formatting and indentation then apply netplan fiel again until you see ping response from google.com
+<b>After this step completed then we are ready to Install SPLUNK on our machine .</b>
+## Splunk Installtion 
+After you sign up on splunk.com then click on 
+### Step -1 
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/92c8f20d-f025-40df-b2ab-89e9499e8f60)
+### Step -2
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/d49bb14b-89e6-4992-8ed3-7b0b5ef00dde)
+### Step -3
+Select Linux and Deb file as we are using Debian based Ubunt Distro for linux Downlaod and Save
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/bca032fe-5c80-489e-a0e4-0d7869868688)
+
+### Step -4
+Add on Virtual guest Add on to our VM
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/57ac0bc5-437d-49dd-ad28-f7cc42a660a0)
+
