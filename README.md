@@ -5,7 +5,7 @@ The purpose of utilizing the active directiry funcitinaly and attack vectors for
 
 ### Skills Learned
 
-- Active direcotry installtion.
+- Active directory installtion.
 - Setting up Windows & Linux VM's.
 - Setting up Splunk Server .
 - Create detection & log analysis.
@@ -14,8 +14,8 @@ The purpose of utilizing the active directiry funcitinaly and attack vectors for
 ### Tools Used
 
 - Security Information and Event Management (SIEM) system for log ingestion and analysis Wazuh
-- Kali Linux for attcking windows based victom machine 
-- WIndows & Lunux VM's.
+- Kali Linux for attacking windows based victim machine 
+- WIndows & Linux VM's. ( Target Win machine and Linux 22.05 LTS Ubuntu server) Win 2022 server trial 
 - Darw.io for digramatic flow 
 
 ## Steps
