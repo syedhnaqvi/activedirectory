@@ -130,4 +130,113 @@ again run command : sudo -u splunk bash then run command : cd bin then ./splunk 
 Use command exit to exit splunk user 
 Then cd bin
 run command : ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/e147bfb9-31fd-402e-b06b-b560b1838eb2) <br>
-It will enable splunk servr to start everytime VM reboots or turns on!
+It will enable splunk servr to start everytime VM reboots or turns on! you will see init script is configured to run at startup .
+### Step -17 Setup Windows Target Machine
+Change hostname to Target-PC
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/ee6fbfd4-0634-497d-a7b6-1a62c182003f)
+
+Restart Machine.
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/738f1801-cce3-44fd-b726-d19aad672de7)
+Check IP run : ipconfig from CMD 
+Assign static IP 192.168.10.100 with defauly gateway 192.168.10.1 DNS 8.8.8.8
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/0d9486a0-4ad1-4ddc-bc8c-c53fa2518ff2)
+
+### Step-17
+Access Splunk server started at 192.168.10.10:8000
+### Step-18 Install Universal Forwarder
+Go to splunk.com login with your account 
+Go to Products > Free Trials & Downloads > Universal Forwarder
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/cdf8caa8-5cf0-438d-bb79-f27f56a70546)
+
+<b>Downlaod relevant OS file after downloading double click file from downlaods folder.</b>
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/c9207574-1f7e-4e71-8fa2-d155e456b440)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/12bc1277-9d58-42b2-b9b4-6e56b9f401ba)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/adc93a6f-293d-4707-b685-da8d207abb6c)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/f5112769-e495-48cc-9abe-6f67e127dc11)
+
+### Install SYSMON
+Search Google sysmon 
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/5a08af61-d8fb-4b6f-b64f-15e68c813cfa)
+
+<b>Use sysmon olaf config search o Google sysmon olaf config</b>
+https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/3609ba7f-543e-4ea4-bfd9-c35316b04d1f)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/f18701a1-f829-4127-b129-4fffec232309)
+
+<b>Open powershell as Amdin after copying path of sysmon downloaded folder</b>
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/df69935f-2298-4577-9e22-09f782ca9d7c)
+
+
+Run command ./sysmon64.exe -i sysmonconfig.xml ( if you sysmon.conf fil ein other folder then give that path I copied mine to same sysmon folder)
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/63c0bc06-644e-4eca-9785-434c3a42a921)
+
+If all goes smooth see this .
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/2584353b-d60f-4074-abc9-4b35a25657b7)
+
+### Step 18 Configure Splunk Forwarder
+<b>It will instruct what needs to be forwarded to our Splunk server</b>
+Need to configure file inputs.conf
+Path to file : C:\Program Files\SplunkUniversalForwarder\etc\system\default
+<b>Note : we need to copy inputs.conf file from default folder and then paste into \system\local folder do not modify master inouts.conf file in default folder.</b>
+Modify inputs.conf file and paste contents from <a href="https://github.com/MyDFIR/Active-Directory-Project">inputs.conf file</a> to your /system/local inputs.conf file ( you can only modilfy it when select open notepad right click then select open as admin admin privileges then go to location of file open and paste then save"
+
+Restart Splunk Universal Forwarder Go to services run ad admin find splunk forwarder right click then restart.
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/34712f4b-fbfc-4afa-9a96-541fb20c27c9)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/af0def4f-b3b5-4b99-ad8a-519c89717f82)
+
+<b> IF see NETSRV account we need to change it to local system account </b>
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/9d3b5b5c-6996-4db5-a571-45b59b04fc82)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/5bf207ce-400e-4ac1-a15d-7276ae312d3d)
+
+### Setting Up & Final Touches to Splunk Server 
+Login to Splunk sever with you credentials
+<b>Since our inputs.conf file contains index=endpoint we need to create same index at splunk to collect logs </b>
+Go to Setting > Indexes
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/43dd3341-df00-4d29-8ec2-62b3c7a73723)
+
+Enter Name : endpoint Click SAVE
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/974abb2e-62e3-4976-89e9-be7b0c6ab1d2)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/507ac6de-d47c-4e33-b87b-1398917a5c96)
+
+<b>Enable Splunk Server To recive data :</b>
+Settings > Forwarding and receiving
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/a9fb610b-be38-4980-a91a-26eed96f676d)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/2d9683dd-6b2f-4486-b80b-ca96e8716f11)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/72f3622b-69e4-4a8b-a278-34a8a3f091c0)
+
+To check if we are getting Data from endpoint to splunk server.
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/c866b10e-d883-4c50-921e-66a9f9afe05f)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/aa845af8-f63d-44f5-9f78-b14c02edb002)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/5ea47fee-4b45-45d5-974c-0703fe3290d8)
+
+Addiitionally use/install splunk sysmon APP for getting more enriched data/fields. Find more Apps
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/9c517924-98f9-4e2c-9308-d60be41d816b)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/5dc61c85-445a-45f5-b9e9-ec00df947433)
+
+
+
+
+
+
+
+
+
+
