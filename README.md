@@ -238,6 +238,16 @@ Follow this detailed video for installing universal forwarder for linux and forw
 <a href="https://community.splunk.com/t5/Getting-Data-In/How-to-setup-universal-forwarder-on-linux/m-p/97458">Other helpful article</a>
 
 
+### Ingesting Windows Firewall Logs to Splunk
+Make these chnages to inputs.conf file :
+[WinEventLog://Microsoft-Windows-Windows Firewall With Advanced Security/Firewall]
+
+index = firewall
+
+disabled = false
+
+sourcetype = [WinEventLog://Security]
+<b> Make sure to restart Splunk Universal Forwarder Service</b>
 
 
 
