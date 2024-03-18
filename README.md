@@ -232,6 +232,9 @@ Addiitionally use/install splunk sysmon APP for getting more enriched data/field
 ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/5dc61c85-445a-45f5-b9e9-ec00df947433)
 
 
+### Setting up & Configure Linux Universal Forwarder 
+Follow this detailed video for installing universal forwarder for linux and forwarding logs to splunk server
+<a href="https://youtu.be/smyLZ6ataK0">Installing & Setting Up Linux Universal Splunk Forwarder</a>
 
 
 
