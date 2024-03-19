@@ -27,6 +27,7 @@ The purpose of utilizing the active directiry funcitinaly and attack vectors for
 - <a href="https://youtu.be/mWqYyl89QaY">Lab-1 Video</a>
 - <a href="https://youtu.be/2cEj3bS5C0Q">Lab-2 Video</a>
 - <a href="https://youtu.be/uXRxoPKX65Q">Lab-3 Video</a>
+- <a href="https://www.youtube.com/watch?v=1XeDht_B-bA">Lab-4 Video</a>
 
 
 Ref 1: Network Diagram*
@@ -144,6 +145,7 @@ Assign static IP 192.168.10.100 with defauly gateway 192.168.10.1 DNS 8.8.8.8
 
 ### Step-17
 Access Splunk server started at 192.168.10.10:8000
+
 ### Step-18 Install Universal Forwarder
 Go to splunk.com login with your account 
 Go to Products > Free Trials & Downloads > Universal Forwarder
@@ -182,7 +184,7 @@ Run command ./sysmon64.exe -i sysmonconfig.xml ( if you sysmon.conf fil ein othe
 If all goes smooth see this .
 ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/2584353b-d60f-4074-abc9-4b35a25657b7)
 
-### Step 18 Configure Splunk Forwarder
+### Step 19 Configure Splunk Forwarder
 <b>It will instruct what needs to be forwarded to our Splunk server</b>
 Need to configure file inputs.conf
 Path to file : C:\Program Files\SplunkUniversalForwarder\etc\system\default
@@ -248,6 +250,141 @@ disabled = false
 
 sourcetype = [WinEventLog://Security]
 <b> Make sure to restart Splunk Universal Forwarder Service</b>
+
+### Step -20 Configure AD Server 
+Assign Static IP to AD server 
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/f7c68aa0-f7fd-445d-a556-0a2357118632)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/d76ed3f4-286b-4c36-8a19-52b24e3879cf)
+
+Select IPV4 settings then add these settings .
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/f8b5de88-bea7-491c-b544-75415a7bbdd9)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/38d2891d-19a9-4108-9eb0-4957ac8fec81)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/a2ea0636-6960-4bdd-a32e-99e603fa59c6)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/b726a252-9177-4046-96f6-e3b147ef66eb)
+
+Click NEXT
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/e2362d8e-4549-4f0e-b3aa-d2acfa65287e)
+
+Click NEXT
+
+Click & Select Active Directory Domain Service a.k.a ADDS
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/8903e2da-2755-4966-b45e-56b70a4e4df0)
+
+Click Add Feature.
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/0a25f801-ce37-4817-938f-7c0f1a2d8e95)
+
+Keep Clikcing Next Unitil see this Screen and click Install.
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/1567c578-a35b-4d3a-b461-1c8d1a2bfaa2)
+
+Will take sometine to install .
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/76d096b9-2be8-437e-93d0-2a06ba62f25c)
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/badbf7a1-f636-4100-9e71-b02b5425f520)
+
+Click Close.
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/d5aa41e0-5a46-4652-b0a8-7e210d534cdb)
+
+Check Notification.
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/6a9295b2-001b-478f-8c69-c227d07d8ade)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/e27ed7e0-93a6-4e0f-a031-20fe5422ce30)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/c09987e7-7a9d-4d07-b200-5746714c1e0e)
+
+Put Password and all defaults and Click NEXT.
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/ea81895b-2a9a-4b9b-ac67-31b62edfb512)
+
+Keep Clicking NEXT.
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/0cb3242e-5538-4a63-8e8b-e450d97532a5)
+
+Click INSTALL.
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/129d459b-5d68-42c9-a6ed-e0f47c50d6e7)
+
+Once all completed server will automatically restart.
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/4eb35c9c-6530-4181-9c10-2024a903e9ec)
+
+After server reboots will see domain screen .
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/075051c6-34ca-4271-b625-54e68716978b)
+
+Login and Add users.
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/d090701e-62fd-4771-b148-3625e1ed44f6)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/e700025b-f4bd-4797-83f5-d83547a648f6)
+
+Expand domain & click Builtin will show you builtin groups created automatically 
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/c6dc8ea2-b311-4633-9c7e-11c58fb5e5f3)
+
+Users option will show users .
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/d995c2f3-a542-4135-841e-4041191087ce)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/c809fd45-d394-4f48-9513-39315c6aeb42)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/f5371099-e6ca-4f11-a4db-873d8db44526)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/0bfdd842-2ded-48d8-a3ba-7853d38de90b)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/a35635f7-537f-4922-836f-5f67f034ee8a)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/2fca809d-f216-4c4d-acfa-a950a20a0b7b)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/82523152-5905-4e6e-85f4-16e0fd2246f8)
+
+Click Finish.
+
+### Step -21 From Cleint Win10 Machine join domain 
+Search PC then click on Properties.
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/0912cdbb-6693-4f63-bb43-7a407d4e332c)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/e5b7a86c-8d04-4aa9-8daa-c3d29df1e6ae)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/8318ed30-d314-4eb3-b9f6-851b965da798)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/c6ddaaff-7ebd-4c70-9e86-0e0ed9412086)
+
+Chnage domain DNS server . Change it to our Domain server address 192.168.10.7
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/b68ec598-1fb1-4fd0-9a48-9112a8bf7a96)
+
+To validate settings.
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/70f54ae1-4b5c-41e4-b4f5-b9ca18597add)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/3f1ba95a-b9f3-4e7c-ae39-7b4827c67344)
+
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/751c76ba-8ba9-49ed-aa02-50fccf55e251)
+
+After Clint machine logs back user jsmith user we created .
+
+![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/559b19de-71a5-43ee-854d-8ed2ef00756b)
 
 
 
