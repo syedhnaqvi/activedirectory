@@ -386,7 +386,8 @@ After Clint machine logs back user jsmith user we created .
 
 ![image](https://github.com/syedhnaqvi/activedirectory/assets/39069507/559b19de-71a5-43ee-854d-8ed2ef00756b)
 
-
+### Adding users in bulk with Powershell script .
+<a href="https://blog.netwrix.com/2018/06/07/how-to-create-new-active-directory-users-with-powershell/">Create bulk Users</a>
 
 
 
